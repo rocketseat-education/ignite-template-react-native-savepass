@@ -15,12 +15,6 @@ import { AppRoutes } from './src/routes/app.routes';
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
 
-  const [fontsLoaded] = useFonts({
-    Rubik_300Light,
-    Rubik_400Regular,
-    Rubik_500Medium
-  });
-
   useEffect(() => {
     async function prepare() {
       try {
