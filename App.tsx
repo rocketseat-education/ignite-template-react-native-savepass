@@ -32,7 +32,7 @@ export default function App() {
     }
 
     prepare();
-  }, [fontsLoaded])
+  }, [])
 
   const onLayoutRootView = useCallback(async () => {
     if (appIsReady) {
