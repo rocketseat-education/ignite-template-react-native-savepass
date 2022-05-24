@@ -19,7 +19,7 @@ interface LoginDataProps {
   service_name: string;
   email: string;
   password: string;
-}
+};
 
 type LoginListDataProps = LoginDataProps[];
 

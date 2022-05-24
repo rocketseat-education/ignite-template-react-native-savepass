@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { FlatList } from 'react-native';
+import { FlatList, FlatListProps } from 'react-native';
 
 import { RFValue } from 'react-native-responsive-fontsize';
 
@@ -38,7 +38,7 @@ export const TotalPassCount = styled.Text`
 
 
 export const LoginList = styled(
-  FlatList as new () => FlatList<LoginListDataProps>
+  FlatList as new (props: FlatListProps<LoginListDataProps>) => FlatList<LoginListDataProps>
 ).attrs({
   showsVerticalScrollIndicator: false,
 })`

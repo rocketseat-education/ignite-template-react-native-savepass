@@ -15,6 +15,7 @@ import {
   BackButton,
   Title,
 } from './styles';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 interface HeaderProps {
   user?: {
@@ -23,8 +24,15 @@ interface HeaderProps {
   }
 }
 
+type RootStackParamList = {
+  Home: undefined;
+  RegisterLoginData: undefined;
+};
+
+type NavigationProps = StackNavigationProp<RootStackParamList>;
+
 export function Header({ user }: HeaderProps) {
-  const { navigate, goBack } = useNavigation();
+  const { navigate, goBack } = useNavigation<NavigationProps>();
 
   function handleAddPass() {
     navigate('RegisterLoginData');

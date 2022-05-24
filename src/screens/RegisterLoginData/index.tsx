@@ -16,6 +16,7 @@ import {
   Container,
   Form
 } from './styles';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 interface FormData {
   service_name: string;
@@ -29,8 +30,15 @@ const schema = Yup.object().shape({
   password: Yup.string().required('Senha é obrigatória!'),
 })
 
+type RootStackParamList = {
+  Home: undefined;
+  RegisterLoginData: undefined;
+};
+
+type NavigationProps = StackNavigationProp<RootStackParamList, 'RegisterLoginData'>;
+
 export function RegisterLoginData() {
-  const { navigate } = useNavigation();
+  const { navigate } = useNavigation<NavigationProps>()
   const {
     control,
     handleSubmit,
@@ -75,7 +83,7 @@ export function RegisterLoginData() {
           />
           <Input
             testID="email-input"
-            title="E-mail"
+            title="E-mail ou usuário"
             name="email"
             error={
               // Replace here with real content
