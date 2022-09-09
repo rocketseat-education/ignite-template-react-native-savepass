@@ -24,6 +24,7 @@ export default function App() {
           Rubik_400Regular,
           Rubik_500Medium
         });
+       SplashScreen.hideAsync();
       } catch (e) {
         console.warn(e);
       } finally {
